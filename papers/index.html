@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="h-full">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=9347&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>学术论文 | Hong</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link rel="icon" type="image/png" href="/images/web.png" />
+<link rel="shortcut icon" href="/images/web.png" />
+<link rel="apple-touch-icon" href="/images/web.png" />
+
+
+
+  
+    
+    
+      
+        <link rel="stylesheet" href="/css/main.css">
+      
+    
+  
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.b8957659e8f2f20e0a23b5cc1f1154837f41cca9f5570fd8f30cd1c087568650.css" media="screen" integrity="sha256-uJV2Wejy8g4KI7XMHxFUg39BzKn1Vw/Y8wzRwIdWhlA=">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+      
+      setTimeout(() => {
+        el.style.backgroundColor = 'transparent';
+        el.parentElement.style.backgroundColor = '#ffffff';
+      }, 10);
+    });
+  });
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+      <script src="/js/main.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+    
+    
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      
+      let language = '';
+      codeBlock.className.split(' ').forEach(function(cls) {
+        if (cls.startsWith('language-')) {
+          language = cls.substring(9);
+        }
+      });
+      
+      
+      const pre = codeBlock.parentNode;
+      const wrapper = pre.parentNode;
+      
+      
+      const container = document.createElement('div');
+      container.className = 'code-block-container';
+      container.style.backgroundColor = '#ffffff';
+      
+      
+      const header = document.createElement('div');
+      header.className = 'code-block-header';
+      
+      
+      if (language) {
+        const langLabel = document.createElement('span');
+        langLabel.className = 'code-language-label';
+        langLabel.textContent = language.toUpperCase();
+        header.appendChild(langLabel);
+      }
+      
+      
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+      
+      copyButton.addEventListener('click', function() {
+        
+        const code = codeBlock.textContent;
+        
+        
+        navigator.clipboard.writeText(code).then(function() {
+          
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Copied!';
+          
+          
+          setTimeout(function() {
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+          }, 2000);
+        });
+      });
+      
+      header.appendChild(copyButton);
+      
+      
+      if (pre.parentNode) {
+        pre.parentNode.removeChild(pre);
+      }
+      
+      
+      pre.style.backgroundColor = '#ffffff';
+      codeBlock.style.backgroundColor = '#ffffff';
+      
+      
+      container.appendChild(header);
+      container.appendChild(pre);
+      
+      
+      wrapper.appendChild(container);
+      
+      
+      hljs.highlightElement(codeBlock);
+      
+      
+      setTimeout(() => {
+        pre.style.backgroundColor = '#ffffff';
+        codeBlock.style.backgroundColor = '#ffffff';
+      }, 50);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const footnoteBacklinks = document.querySelectorAll('.footnote-backref');
+    
+    footnoteBacklinks.forEach(function(backlink) {
+      backlink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        
+        const href = backlink.getAttribute('href');
+        
+        if (href) {
+          
+          const target = document.querySelector(href);
+          
+          if (target) {
+            
+            target.scrollIntoView({ behavior: 'smooth' });
+            
+            
+            target.classList.add('footnote-highlight');
+            setTimeout(function() {
+              target.classList.remove('footnote-highlight');
+            }, 2000);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+</head>
+<body class="flex flex-col bg-gray-50 font-bilingual">
+  <header class="fixed top-0 left-0 z-30 w-full bg-white shadow-sm">
+    <div class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      <div class="flex items-center justify-between py-3">
+  <div class="text-lg sm:text-xl font-bold flex-shrink-0 max-w-[40%] sm:max-w-md truncate">
+    <a href="/" class="text-current hover:text-blue-600 transition-colors no-underline">
+      Hong
+    </a>
+  </div>
+  
+  <nav class="flex justify-end w-full whitespace-nowrap">
+    <ul class="flex flex-row items-center space-x-2 sm:space-x-4 md:space-x-6 py-2">
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/">Home</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/about/">个人主页</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/education/">教育经历</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" aria-current="page" class="active font-bold" href="/papers/">科研成果</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/award/">荣誉竞赛</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/experience/">实习实践</a>
+    </li>
+    </ul>
+  </nav>
+
+</div>
+    </div>
+  </header>
+  
+  <div class="flex-1 flex flex-col min-h-screen pt-24">
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      
+<section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="mb-10 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">学术论文</h1>
+        <div class="flex justify-center gap-4 mt-6">
+            <button id="all-btn" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded">
+                全部 <span id="all-count" class="ml-2 bg-white text-blue-600 px-2 py-1 rounded-full text-sm"></span>
+            </button>
+            <button id="published-btn" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded">
+                已发表 <span id="published-count" class="ml-2 bg-gray-300 text-gray-800 px-2 py-1 rounded-full text-sm"></span>
+            </button>
+            <button id="submitted-btn" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded">
+                在投 <span id="submitted-count" class="ml-2 bg-gray-300 text-gray-800 px-2 py-1 rounded-full text-sm"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="papers-container">
+        
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">        
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">中科院一区TOP</span>
+        <span class="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">CCF-B</span>
+        <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">IF 8.6</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        <a href="https://ieeexplore.ieee.org/document/10746542" target="_blank" class="hover:text-blue-600">
+          SeaIceNet: Sea Ice Recognition via Global-Local Transformer in Optical Remote Sensing Images
+        </a>
+      </h3>
+      <p class="text-gray-700 mb-2">
+        <strong>W. Hong</strong>, Z. Huang, A. Wang, Y. Liu, J. Cai, H. Su
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859" target="_blank" class="hover:text-blue-600">
+          IEEE Transactions on Geoscience and Remote Sensing
+        </a>, 2024
+      </div>
+      <div class="abstract bg-gray-50 p-4 rounded">
+        <strong>Abstract:</strong> The recognition of sea ice is of great significance for reflecting climate change and ensuring the safety of ship navigation. Recently, many deep-learning-based methods have been proposed and applied to segment and recognize sea ice regions.
+        <span class="full-abstract hidden"> However, there are huge differences in sea ice size and irregular edge profiles, which bring challenges to the existing sea ice recognition. In this article, a global-local Transformer network, called SeaIceNet, is proposed for sea ice recognition in optical remote sensing images. In SeaIceNet, a dual global-attention head (DGAH) is proposed to capture global information. On this basis, a global-local feature fusion (GLFF) mechanism is designed to fuse global structural correlation features and local spatial detail features. Furthermore, a detail-guided decoder is developed to retain more high-resolution detail information during feature reconstruction for improving the performance of sea ice recognition. Extensive experiments on several sea ice datasets demonstrated that the proposed SeaIceNet has better performance than the existing methods in multiple evaluation indicators. Moreover, it excels in addressing challenges associated with sea ice recognition in optical remote sensing images, including the difficulty in accurately identifying irregular frozen ponds in complex environments, the broken and unclear boundaries between sea and thin ice that hinder precise segmentation, and the loss of high-resolution spatial details during model learning that complicates refinement.</span>
+        <button class="toggle-btn text-blue-600 ml-1">Show more</button>
+      </div>
+      <div class="mt-3 text-right">
+        <a href="https://ieeexplore.ieee.org/document/10746542" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+          View Paper
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg mt-6">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">        
+        <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">在投</span>
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">中科院二区</span>
+        <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">IF 5.3</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        SI-Mamba: High-Resolution Sea Ice Recognition via RB-NDI Guided State Space Model
+      </h3>
+      <p class="text-gray-700 mb-2">
+        <strong>W. Hong</strong>, Z. Huang, Y. Yang, L. You, J. Cai, J. Zhou, W. Guan, H. Su
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing
+      </div>
+      <div class="mt-3 text-right">
+        <span class="inline-flex items-center text-gray-500 cursor-not-allowed">
+          论文在投中
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg mt-6">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">        
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">中科院三区</span>
+        <span class="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">CCF-C</span>
+        <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">IF 4.4</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        <a href="https://ieeexplore.ieee.org/document/11113272" target="_blank" class="hover:text-blue-600">
+          Color-Robust Sea Ice Change Detection
+        </a>
+      </h3>
+      <p class="text-gray-700 mb-2">
+        <strong>W. Hong</strong>, Z. Huang, Y. Yang, J. Cai, W. Guan, J. Jia, L. You, H. Su
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859" target="_blank" class="hover:text-blue-600">
+          IEEE Geoscience and Remote Sensing Letters
+        </a>, 2025
+      </div>
+      <div class="abstract bg-gray-50 p-4 rounded">
+        <strong>Abstract:</strong> Sea ice change detection is vital for understanding climate dynamics and ensuring maritime safety. Existing deep learning methods often struggle with the significant impact of color variations in satellite imagery, which can lead to inaccurate detection results.
+        <span class="full-abstract hidden"> Moreover, the scarcity of labeled sea ice change data limits the ability of models to generalize across diverse scenarios. To address these challenges, we propose SICNet, a sea ice change detection model with enhanced color robustness and data efficiency. A wavelet-guided color-robust fusion (WCF) module is introduced to reduce low-frequency color discrepancies while preserving high-frequency edge details. In addition, a novel change-sensitive CutMix (CSC) strategy is used to augment training samples by focusing on regions with moderate changes, effectively increasing data diversity. Experiments conducted on our constructed sea ice change dataset demonstrate that SICNet achieves superior performance and robustness under varying environmental and lighting conditions.</span>
+        <button class="toggle-btn text-blue-600 ml-1">Show more</button>
+      </div>
+      <div class="mt-3 text-right">
+        <a href="https://ieeexplore.ieee.org/document/11113272" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+          View Paper
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg mt-6">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">EI索引</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        <a href="https://ieeexplore.ieee.org/document/10642141" target="_blank" class="hover:text-blue-600">
+          Global-Local Detail Guided Transformer for Sea Ice Recognition in Optical Remote Sensing Images
+        </a>
+      </h3>
+      <p class="text-gray-700 mb-2">
+        Z. Huang, <strong>W. Hong</strong>, H. Su
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/10640349/proceeding" target="_blank" class="hover:text-blue-600">
+          IEEE International Geoscience and Remote Sensing Symposium
+        </a>, 2024
+      </div>
+      <div class="abstract bg-gray-50 p-4 rounded">
+        <strong>Abstract:</strong> The recognition of sea ice is of great significance for reflecting climate change and ensuring the safety of ship navigation. Recently, many deep learning based methods have been proposed and applied to segment and recognize sea ice regions.
+        <span class="full-abstract hidden"> However, the diverse scales of sea ice areas, the zigzag and fine edge contours, and the difficulty in distinguishing different types of sea ice pose challenges to existing sea ice recognition models. In this paper, a Global-Local Detail Guided Transformer (GDGT) method is proposed for sea ice recognition in optical remote sensing images. In GDGT, a global-local feature fusion mechanism is designed to fuse global structural correlation features and local spatial detail features. Furthermore, a detail-guided decoder is developed to retain more high-resolution detail information during feature reconstruction for improving the performance of sea ice recognition. Experiments on the produced sea ice dataset demonstrated the effectiveness and advancement of GDGT.</span>
+        <button class="toggle-btn text-blue-600 ml-1">Show more</button>
+      </div>
+      <div class="mt-3 text-right">
+        <a href="https://ieeexplore.ieee.org/document/10642141" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+          View Paper
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg mt-6">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">        
+        <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">在投</span>
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">中科院一区TOP</span>
+        <span class="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">CCF-B</span>
+        <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">IF 8.6</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        Coastal Aquaculture Pond Recognition via Scale and Boundary Dynamic Awareness Network in Remote Sensing Imagery
+      </h3>
+      <p class="text-gray-700 mb-2">
+         Z. Huang, J. Cai, <strong>W. Hong</strong>, We. Guan, J. Zhou, H. Su, S. Feng, R. Tao
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        IEEE Transactions on Geoscience and Remote Sensing
+      </div>
+      <div class="mt-3 text-right">
+        <span class="inline-flex items-center text-gray-500 cursor-not-allowed">
+          论文在投中
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="paper-item bg-white p-6 border border-gray-200 rounded-lg mt-6">
+  <div class="flex items-start gap-4">
+    <div class="paper-icon p-3 rounded bg-blue-50 flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <div class="flex-grow">
+      <div class="flex flex-wrap items-center gap-2 mb-2">        
+        <span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">中科院三区</span>
+        <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">IF 3.9</span>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mb-1">
+        Edge-aware transformer for coastal raft aquaculture extraction in optical remote sensing imagery
+      </h3>
+      <p class="text-gray-700 mb-2">
+         H. Su, Y. Liu, Z. Huang, A. Wang, <strong>W. Hong</strong>, J. Cai
+      </p>
+      <div class="text-sm text-gray-600 mb-3">
+        International Journal of Digital Earth, 2025
+      </div>
+      <div class="abstract bg-gray-50 p-4 rounded">
+        <strong>Abstract:</strong> To scientifically plan and accurately manage the coastal aquaculture industry, it is especially critical to quickly and accurately extract raft aquaculture areas.
+        <span class="full-abstract hidden"> In the study, the Raft-Former was designed to accurately extract coastal raft aquaculture in Sansha Bay using Sentinel-2 remote sensing imagery. Specifically, a Feature Enhancement Module (FEM) was designed to selectively learn the interest features for solving the omission and mis-extraction caused by changes in the coastal environment. For the boundary adhesion problems caused by the dense distribution of raft aquaculture areas, a Feature Alignment Module (FAM) was developed to enhance edge-aware ability. A Global-Local Fusion Module (GLFM) was introduced to effectively integrate the local features with multi-scale and global features to overcome significant scale differences in aquaculture areas. Numerous experiments show that our method is better than the state-of-the-art models. Specifically, Raft-Former respectively achieves 90.05% and 86.73% mIoU on the Sansha Bay dataset.</span>
+        <button class="toggle-btn text-blue-600 ml-1">Show more</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 科研项目部分 -->
+<div class="mt-12 pt-8 border-t-2 border-gray-200">
+  <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">科研项目</h2>
+  
+  <div class="space-y-6">
+    <!-- 科研项目1 -->
+    <div class="project-item bg-white p-6 border border-gray-200 rounded-lg">
+      <div class="flex items-start gap-4">
+        <div class="project-icon p-3 rounded bg-green-50 flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-center mb-1">
+            <h3 class="text-lg font-bold text-gray-900">
+              面向海洋养殖的高分辨率遥感图像轻量化目标检测方法研究
+            </h3>
+            <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">国家级</span>
+          </div>
+          <p class="text-gray-700 mb-2">
+            国家自然科学基金青年科学基金项目，参与
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 科研项目2 -->
+    <div class="project-item bg-white p-6 border border-gray-200 rounded-lg">
+      <div class="flex items-start gap-4">
+        <div class="project-icon p-3 rounded bg-green-50 flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-center mb-1">
+            <h3 class="text-lg font-bold text-gray-900">
+              知识与数据协同驱动的近海养殖目标遥感智能检测与识别
+            </h3>
+            <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">省部级</span>
+          </div>
+          <p class="text-gray-700 mb-2">
+            福建省自然科学基金面上项目，参与
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 科研项目2 -->
+    <div class="project-item bg-white p-6 border border-gray-200 rounded-lg">
+      <div class="flex items-start gap-4">
+        <div class="project-icon p-3 rounded bg-green-50 flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-center mb-1">
+            <h3 class="text-lg font-bold text-gray-900">
+              近岸海洋牧场高精度识别及其泛化应用
+            </h3>
+            <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded">省部级</span>
+          </div>
+          <p class="text-gray-700 mb-2">
+            福建省对外合作项目，参与
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 学术会议部分 -->
+<div class="mt-12 pt-8 border-t-2 border-gray-200">
+  <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">学术会议</h2>
+
+  
+  <!-- 学术会议1 -->
+  <div class="conference-item bg-white p-0 border border-gray-200 rounded-lg mb-6 overflow-hidden">
+    <!-- 顶部色带：名称左，时间右 -->
+    <div class="bg-blue-100 p-4 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-800">人工智能与遥感科学交叉研讨会</h3>
+      <div class="flex items-center text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        2024年10月12-14日
+      </div>
+    </div>
+    
+    <!-- 色带下内容：地点左，标签右 -->
+    <div class="p-4">
+      <div class="flex justify-between">
+        <!-- 地点信息（名称下方） -->
+        <div class="flex items-center text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          中国 · 青岛
+        </div>
+        
+        <!-- 标签信息（时间下方） -->
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">海报展示</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 学术会议2 -->
+  <div class="conference-item bg-white p-0 border border-gray-200 rounded-lg mb-6 overflow-hidden">
+    <!-- 顶部色带：名称左，时间右 -->
+    <div class="bg-blue-100 p-4 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-800">中国冰冻圈遥感与大数据学术研讨会</h3>
+      <div class="flex items-center text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        2025年05月17-18日
+      </div>
+    </div>
+    
+    <!-- 色带下内容：地点左，标签右 -->
+    <div class="p-4">
+      <div class="flex justify-between">
+        <!-- 地点信息（名称下方） -->
+        <div class="flex items-center text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          中国 · 南京
+        </div>
+        
+        <!-- 标签信息（时间下方） -->
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">海报展示</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 学术会议2 -->
+  <div class="conference-item bg-white p-0 border border-gray-200 rounded-lg mb-6 overflow-hidden">
+    <!-- 顶部色带：名称左，时间右 -->
+    <div class="bg-blue-100 p-4 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-800">"遥感学报"遥感科学研究生论坛</h3>
+      <div class="flex items-center text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        2025年10月18-20日
+      </div>
+    </div>
+    
+    <!-- 色带下内容：地点左，标签右 -->
+    <div class="p-4">
+      <div class="flex justify-between">
+        <!-- 地点信息（名称下方） -->
+        <div class="flex items-center text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Online
+        </div>
+        
+        <!-- 标签信息（时间下方） -->
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">口头报告</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="mt-10 text-center">
+        <a href="/" class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-800 font-medium rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            返回首页
+        </a>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const fullAbstract = this.previousElementSibling;
+                
+                if (fullAbstract.classList.contains('hidden')) {
+                    fullAbstract.classList.remove('hidden');
+                    this.textContent = 'Show less';
+                } else {
+                    fullAbstract.classList.add('hidden');
+                    this.textContent = 'Show more';
+                }
+            });
+        });
+
+        
+        const paperItems = document.querySelectorAll('.paper-item');
+        let publishedCount = 0;
+        let submittedCount = 0;
+
+        
+        paperItems.forEach(item => {
+            const tags = item.querySelectorAll('span');
+            let isSubmitted = false;
+            
+            tags.forEach(tag => {
+                if (tag.textContent.includes('在投')) {
+                    isSubmitted = true;
+                }
+            });
+
+            if (isSubmitted) {
+                item.dataset.type = 'submitted';
+                submittedCount++;
+            } else {
+                item.dataset.type = 'published';
+                publishedCount++;
+            }
+        });
+
+        
+        const allCount = paperItems.length;
+        document.getElementById('all-count').textContent = allCount;
+        document.getElementById('published-count').textContent = publishedCount;
+        document.getElementById('submitted-count').textContent = submittedCount;
+
+        
+        const publishedBtn = document.getElementById('published-btn');
+        const submittedBtn = document.getElementById('submitted-btn');
+        const allBtn = document.getElementById('all-btn');
+
+        function resetButtons() {
+            publishedBtn.classList.remove('bg-blue-600', 'text-white');
+            publishedBtn.classList.add('bg-gray-200', 'text-gray-800');
+            submittedBtn.classList.remove('bg-blue-600', 'text-white');
+            submittedBtn.classList.add('bg-gray-200', 'text-gray-800');
+            allBtn.classList.remove('bg-blue-600', 'text-white');
+            allBtn.classList.add('bg-gray-200', 'text-gray-800');
+        }
+
+        publishedBtn.addEventListener('click', function() {
+            resetButtons();
+            this.classList.remove('bg-gray-200', 'text-gray-800');
+            this.classList.add('bg-blue-600', 'text-white');
+            
+            paperItems.forEach(item => {
+                if (item.dataset.type === 'published') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        submittedBtn.addEventListener('click', function() {
+            resetButtons();
+            this.classList.remove('bg-gray-200', 'text-gray-800');
+            this.classList.add('bg-blue-600', 'text-white');
+            
+            paperItems.forEach(item => {
+                if (item.dataset.type === 'submitted') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        allBtn.addEventListener('click', function() {
+            resetButtons();
+            this.classList.remove('bg-gray-200', 'text-gray-800');
+            this.classList.add('bg-blue-600', 'text-white');
+            
+            paperItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        });
+
+        
+        allBtn.click();
+    });
+</script>
+
+    </main>
+  </div>
+  
+  <footer class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+    <div class="py-6 border-t border-gray-200 bg-gray-50 shadow-inner mt-6">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+     
+     
+       
+         
+       
+     
+       
+         
+       
+    
+
+    
+    <div class="flex justify-center space-x-8">
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="https://github.com/viking-hong"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="GitHub"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+      
+
+      
+      
+
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="mailto:viking_hazard@163.com"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="邮箱"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+            />
+            <path
+              d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+            />
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    
+    
+    <div class="mt-4 text-center text-gray-500 text-sm">
+      © All Copyrights Reserved by <span class="font-serif italic font-medium">viking_h</span>    (最后更新于 2025.11.21)
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+</div>
+
+  </footer>
+</body>
+</html>
