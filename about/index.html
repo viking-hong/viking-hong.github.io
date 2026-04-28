@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="h-full">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> | Hong</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link rel="icon" type="image/png" href="/images/web.png" />
+<link rel="shortcut icon" href="/images/web.png" />
+<link rel="apple-touch-icon" href="/images/web.png" />
+
+
+
+  
+    
+    
+      
+        <link rel="stylesheet" href="/css/main.css">
+      
+    
+  
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.b8957659e8f2f20e0a23b5cc1f1154837f41cca9f5570fd8f30cd1c087568650.css" media="screen" integrity="sha256-uJV2Wejy8g4KI7XMHxFUg39BzKn1Vw/Y8wzRwIdWhlA=">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+      
+      setTimeout(() => {
+        el.style.backgroundColor = 'transparent';
+        el.parentElement.style.backgroundColor = '#ffffff';
+      }, 10);
+    });
+  });
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+      <script src="/js/main.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+    
+    
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      
+      let language = '';
+      codeBlock.className.split(' ').forEach(function(cls) {
+        if (cls.startsWith('language-')) {
+          language = cls.substring(9);
+        }
+      });
+      
+      
+      const pre = codeBlock.parentNode;
+      const wrapper = pre.parentNode;
+      
+      
+      const container = document.createElement('div');
+      container.className = 'code-block-container';
+      container.style.backgroundColor = '#ffffff';
+      
+      
+      const header = document.createElement('div');
+      header.className = 'code-block-header';
+      
+      
+      if (language) {
+        const langLabel = document.createElement('span');
+        langLabel.className = 'code-language-label';
+        langLabel.textContent = language.toUpperCase();
+        header.appendChild(langLabel);
+      }
+      
+      
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+      
+      copyButton.addEventListener('click', function() {
+        
+        const code = codeBlock.textContent;
+        
+        
+        navigator.clipboard.writeText(code).then(function() {
+          
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Copied!';
+          
+          
+          setTimeout(function() {
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+          }, 2000);
+        });
+      });
+      
+      header.appendChild(copyButton);
+      
+      
+      if (pre.parentNode) {
+        pre.parentNode.removeChild(pre);
+      }
+      
+      
+      pre.style.backgroundColor = '#ffffff';
+      codeBlock.style.backgroundColor = '#ffffff';
+      
+      
+      container.appendChild(header);
+      container.appendChild(pre);
+      
+      
+      wrapper.appendChild(container);
+      
+      
+      setTimeout(() => {
+        pre.style.backgroundColor = '#ffffff';
+        codeBlock.style.backgroundColor = '#ffffff';
+      }, 50);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const footnoteBacklinks = document.querySelectorAll('.footnote-backref');
+    
+    footnoteBacklinks.forEach(function(backlink) {
+      backlink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        
+        const href = backlink.getAttribute('href');
+        
+        if (href) {
+          
+          const target = document.querySelector(href);
+          
+          if (target) {
+            
+            target.scrollIntoView({ behavior: 'smooth' });
+            
+            
+            target.classList.add('footnote-highlight');
+            setTimeout(function() {
+              target.classList.remove('footnote-highlight');
+            }, 2000);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+</head>
+<body class="flex flex-col bg-gray-50 font-bilingual">
+  
+  
+  <header class="fixed top-0 left-0 z-30 w-full bg-white shadow-sm">
+    <div class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      <div class="flex items-center justify-between py-3">
+  <div class="text-lg sm:text-xl font-bold flex-shrink-0 max-w-[40%] sm:max-w-md truncate">
+    <a href="/home" class="text-current hover:text-blue-600 transition-colors no-underline">
+      Hong
+    </a>
+  </div>
+  
+  <nav class="flex justify-end w-full whitespace-nowrap">
+    <ul class="flex flex-row items-center space-x-2 sm:space-x-4 md:space-x-6 py-2">
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/home/">Home</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" aria-current="page" class="active font-bold" href="/about/">个人主页</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/education/">教育经历</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/papers/">科研成果</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/award/">荣誉竞赛</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/experience/">实习实践</a>
+    </li>
+    </ul>
+  </nav>
+
+</div>
+
+    </div>
+  </header>
+  
+  
+  
+  
+    
+    <div class="flex-1 flex flex-col min-h-screen pt-24 pb-24">
+      <main class="flex-1 w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+        
+<div class="max-w-3xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-4"></h1>
+    
+  </header>
+
+  <main>
+    <div class="prose prose-lg max-w-none">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 40px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #ffffff; min-height: 100vh;">
+  <style>
+    .simple-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      color: #1f2937;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+    .item-title {
+      color: #1f2937;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .item-subtitle {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      background: #f3f4f6;
+      color: #374151;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+    .bio-text {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+    .stat-label {
+      color: #6b7280;
+      font-size: 14px;
+    }
+  </style>
+<!-- Personal Profile Header -->
+<div style="text-align: center; margin-bottom: 60px; padding: 40px 20px; background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%); border-radius: 24px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(34, 197, 94, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+  <!-- 头像区域 -->
+  <div style="text-align: center; margin-bottom: 24px; position: relative; z-index: 1;">
+    <div style="display: inline-block; position: relative;">
+      <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #86efac, #4ade80); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 60px; margin: 0 auto; box-shadow: 0 8px 24px rgba(74, 222, 128, 0.25); position: relative;">
+        👨‍💻
+      </div>
+      <!-- 动态光环 -->
+      <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50%; animation: rotate 3s linear infinite;"></div>
+    </div>
+  </div>
+  <!-- 标题和副标题 -->
+  <div style="text-align: center; margin-bottom: 20px; position: relative; z-index: 1;">
+    <h1 style="margin: 0; font-size: 42px; color: #064e3b; font-weight: 700; margin-bottom: 12px; text-shadow: 0 2px 4px rgba(6, 78, 59, 0.1);">Wenjun Hong</h1>
+    <p style="margin: 0; color: #047857; font-size: 20px; margin-bottom: 24px; font-weight: 500;">福州大学 · 数字中国研究院（福建）</p>
+  </div>
+  <!-- 标签 -->
+  <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; position: relative; z-index: 1;">
+    <span style="background: rgba(255, 255, 255, 0.8); color: #065f46; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(6, 95, 70, 0.2);">
+      🔴 中共党员
+    </span>
+    <span style="background: rgba(255, 255, 255, 0.8); color: #065f46; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(6, 95, 70, 0.2);">
+      📍 福建·福州
+    </span>
+    <span style="background: rgba(255, 255, 255, 0.8); color: #065f46; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; backdrop-filter: blur(10px); border: 1px solid rgba(6, 95, 70, 0.2);">
+      📧 viking_hazard@163.com
+    </span>
+  </div>
+</div>
+<!-- Quick Stats -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px;">
+  <!-- 研究论文统计 -->
+  <div style="background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%); border-radius: 20px; padding: 28px 20px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(59, 130, 246, 0.12); transform: translateY(0); transition: all 0.3s ease;">
+    <!-- 装饰性背景 -->
+    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+    <!-- 图标 -->
+    <div style="position: relative; z-index: 1; margin-bottom: 16px;">
+      <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3);">
+        📚
+      </div>
+    </div>
+    <!-- 数字 -->
+    <div style="position: relative; z-index: 1; color: #1e3a8a; font-size: 42px; font-weight: 800; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(30, 58, 138, 0.15);">6</div>
+    <!-- 标签 -->
+    <div style="position: relative; z-index: 1; color: #1e40af; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">Research Papers</div>
+  </div>
+  <!-- 项目统计 -->
+  <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-radius: 20px; padding: 28px 20px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(129, 140, 248, 0.12); transform: translateY(0); transition: all 0.3s ease;">
+    <!-- 装饰性背景 -->
+    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+    <!-- 图标 -->
+    <div style="position: relative; z-index: 1; margin-bottom: 16px;">
+      <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3);">
+        🚀
+      </div>
+    </div>
+    <!-- 数字 -->
+    <div style="position: relative; z-index: 1; color: #5b21b6; font-size: 42px; font-weight: 800; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(91, 33, 182, 0.15);">3</div>
+    <!-- 标签 -->
+    <div style="position: relative; z-index: 1; color: #6d28d9; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">Projects</div>
+  </div>
+  <!-- 奖项统计 -->
+  <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border-radius: 20px; padding: 28px 20px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12); transform: translateY(0); transition: all 0.3s ease;">
+    <!-- 装饰性背景 -->
+    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+    <!-- 图标 -->
+    <div style="position: relative; z-index: 1; margin-bottom: 16px;">
+      <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4);">
+        🏆
+      </div>
+    </div>
+    <!-- 数字 -->
+    <div style="position: relative; z-index: 1; color: #9f1239; font-size: 42px; font-weight: 800; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(159, 18, 57, 0.15);">16+</div>
+    <!-- 标签 -->
+    <div style="position: relative; z-index: 1; color: #be185d; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">Awards</div>
+  </div>
+</div>
+<!-- Bio Section -->
+<div style="background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%); border-radius: 24px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(168, 85, 247, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+  <!-- 标题和副标题 -->
+  <div style="text-align: center; margin-bottom: 20px; position: relative; z-index: 1;">
+    <h2 style="color: #581c87; font-size: 32px; font-weight: 700; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(88, 28, 135, 0.1);">关于我</h2>
+  </div>
+  <!-- 个人简介 -->
+  <div style="color: #6b21a8; line-height: 1.8; margin-bottom: 14px; position: relative; z-index: 1;">
+    <p style="margin-bottom: 16px;">
+      ✨ 洪文君，硕士研究生。现就读于福州大学数字中国研究院（福建），即将就读于湖南大学设计艺术学院，本科毕业于中南林业科技大学前沿交叉学科学院。研究方向为计算机视觉、遥感图像智能解译。参与国家自然科学基金青年基金项目、福建省自然科学基金面上项目、福建省对外合作项目等科研项目，已在IEEE TGRS、IEEE JSTARS、IEEE GRSL等期刊发表论文6篇，担任npj Heritage Science、Scientific Reports等SCI期刊审稿人。
+    </p>
+    <p style="margin-bottom: 16px;">
+      ✨ 获得国际摄影测量与遥感学会 (ISPRS) 多模态图像算法智能解译大赛亚军、高教社杯全国大学生数学建模竞赛国家级二等奖、美国大学生数学建模竞赛H奖等竞赛奖项，获得硕士研究生国家奖学金、湖南省优秀毕业生等荣誉。
+    </p>
+    <p style="margin-bottom: 16px;">
+      ❗ 内容最后更新于2026年02月15日！
+    </p>
+  </div>
+</div>
+<!-- Education Section -->
+<div style="background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); border-radius: 24px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(251, 146, 60, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+  <!-- 标题 -->
+  <div style="text-align: center; margin-bottom: 30px; position: relative; z-index: 1;">
+    <h2 style="color: #7c2d12; font-size: 32px; font-weight: 700; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(124, 45, 18, 0.1);">🎓 教育经历</h2>
+  </div>
+  <!-- 教育内容 -->
+  <div style="display: grid; gap: 24px; position: relative; z-index: 1;">
+    <!-- 博士经历 -->
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+      <div style="background: linear-gradient(135deg, #fecaca, #f87171); color: white; padding: 16px 24px; border-radius: 18px 18px 0 0; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          🎓
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">博士阶段</div>
+      </div>
+      <div style="padding: 24px;">
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div class="item-title" style="color: #1e293b; font-size: 20px; margin-bottom: 0;">湖南大学</div>
+              <div class="item-subtitle" style="color: #475569; font-weight: 500; font-size: 16px; margin-bottom: 0;">设计艺术学院</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="background: linear-gradient(135deg, #fecaca, #f87171); color: white; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+                🎯 博士研究生
+              </span>
+              <span style="background: rgba(254, 202, 202, 0.1); color: #1e293b; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">
+                📍 湖南·长沙
+              </span>
+            </div>
+          </div>
+          <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <img src="/images/hnu.png" alt="湖南大学" style="width: 100%; height: 100%; object-fit: cover; box-shadow: none;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 研究生经历 -->
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+      <div style="background: linear-gradient(135deg, #bfdbfe, #60a5fa); color: white; padding: 16px 24px; border-radius: 18px 18px 0 0; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          🎓
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">硕士阶段</div>
+      </div>
+      <div style="padding: 24px;">
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div class="item-title" style="color: #1e293b; font-size: 20px; margin-bottom: 0;">福州大学</div>
+              <div class="item-subtitle" style="color: #475569; font-weight: 500; font-size: 16px; margin-bottom: 0;">数字中国研究院（福建）</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="background: linear-gradient(135deg, #bfdbfe, #60a5fa); color: white; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+                🎯 硕士研究生
+              </span>
+              <span style="background: rgba(254, 202, 202, 0.1); color: #1e293b; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">
+                📍 福建·福州
+              </span>
+            </div>
+          </div>
+          <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <img src="/images/fzu1.png" alt="福州大学" style="width: 100%; height: 100%; object-fit: cover; box-shadow: none;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 本科经历 -->
+    <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+      <div style="background: linear-gradient(135deg, #cbd5e1, #94a3b8); color: white; padding: 16px 24px; border-radius: 18px 18px 0 0; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          🎓
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">学士阶段</div>
+      </div>
+      <div style="padding: 24px;">
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div class="item-title" style="color: #1e293b; font-size: 20px; margin-bottom: 0;">中南林业科技大学</div>
+              <div class="item-subtitle" style="color: #475569; font-weight: 500; font-size: 16px; margin-bottom: 0;">前沿交叉学科学院（原 理学院）</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="background: linear-gradient(135deg, #cbd5e1, #94a3b8); color: white; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+                🎯 本科生
+              </span>
+              <span style="background: rgba(203, 213, 225, 0.1); color: #1e293b; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">
+                📍 湖南·长沙
+              </span>
+            </div>
+          </div>
+          <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <img src="/images/csuft1.png" alt="中南林业科技大学" style="width: 100%; height: 100%; object-fit: cover; box-shadow: none;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Academic Positions Section -->
+<div style="background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%); border-radius: 24px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+<!-- Football Experience -->
+<div style="background: linear-gradient(135deg, #bae6fd 0%, #93c5fd 100%); border-radius: 24px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+  <!-- 标题 -->
+  <div style="text-align: center; margin-bottom: 30px; position: relative; z-index: 1;">
+    <h2 style="color: #1e40af; font-size: 32px; font-weight: 700; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);">⚽ 足球经历</h2>
+  </div>
+  <!-- 足球经历内容 -->
+  <div style="position: relative; padding-left: 30px; position: relative; z-index: 1;">
+    <!-- 时间轴主线 -->
+    <div style="position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #667eea, #f093fb, #4facfe);"></div>
+    <!-- 国家级赛事 -->
+    <div style="position: relative; margin-bottom: 24px;">
+      <div style="position: absolute; left: -22px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #667eea; border: 3px solid #ffffff; box-shadow: 0 0 0 2px #667eea;"></div>
+      <div style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">🏆</span>
+            <div class="item-title" style="color: #1e293b;">中国大学生五人制足球联赛</div>
+          </div>
+          <div style="color: #ffffff; font-size: 13px; font-weight: 600; background: linear-gradient(135deg, #667eea, #764ba2); padding: 4px 8px; border-radius: 4px; white-space: nowrap;">国家级赛事</div>
+        </div>
+      </div>
+    </div>
+    <!-- 省级赛事 -->
+    <div style="position: relative; margin-bottom: 24px;">
+      <div style="position: absolute; left: -22px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #f093fb; border: 3px solid #ffffff; box-shadow: 0 0 0 2px #f093fb;"></div>
+      <div style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">🥅</span>
+            <div class="item-title" style="color: #1e293b;">福建省大学生足球联赛</div>
+          </div>
+          <div style="color: #ffffff; font-size: 13px; font-weight: 600; background: linear-gradient(135deg, #f093fb, #f5576c); padding: 4px 8px; border-radius: 4px; white-space: nowrap;">省级赛事</div>
+        </div>
+      </div>
+    </div>
+    <!-- 市级联赛 -->
+    <div style="position: relative;">
+      <div style="position: absolute; left: -22px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #4facfe; border: 3px solid #ffffff; box-shadow: 0 0 0 2px #4facfe;"></div>
+      <div style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 20px;">⚽</span>
+            <div class="item-title" style="color: #1e293b;">虎纠足球超级联赛（甲组）</div>
+          </div>
+          <div style="color: #ffffff; font-size: 13px; font-weight: 600; background: linear-gradient(135deg, #4facfe, #00f2fe); padding: 4px 8px; border-radius: 4px; white-space: nowrap;">市级联赛</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Music & Hobbies Section -->
+<div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 24px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);">
+  <!-- 装饰性背景元素 -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+  <!-- 标题 -->
+  <div style="text-align: center; margin-bottom: 30px; position: relative; z-index: 1;">
+    <h2 style="color: #1e3a8a; font-size: 32px; font-weight: 700; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(30, 58, 138, 0.1);">🎵 音乐</h2>
+  </div>
+  <!-- 音乐内容 -->
+  <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #e0f2fe 100%); border-radius: 20px; padding: 24px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3); position: relative; z-index: 1;">
+    <!-- 最喜爱的歌手部分 -->
+    <div style="margin-bottom: 32px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #60a5fa, #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; animation: pulse 2s infinite;">
+          🎵
+        </div>
+        <div style="flex: 1;">
+          <div style="color: #1e3a8a; font-size: 20px; font-weight: 600;">最喜爱的歌手 - 张杰</div>
+        </div>
+        <div style="display: flex; gap: 2px;">
+          <span style="color: #3b82f6; font-size: 16px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);">⭐</span>
+          <span style="color: #3b82f6; font-size: 16px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);">⭐</span>
+          <span style="color: #3b82f6; font-size: 16px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);">⭐</span>
+          <span style="color: #3b82f6; font-size: 16px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);">⭐</span>
+          <span style="color: #3b82f6; font-size: 16px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);">⭐</span>
+        </div>
+      </div>
+    <!-- 演唱会经历部分 -->
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #60a5fa, #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          🎸
+        </div>
+        <div style="flex: 1;">
+          <div style="color: #1e3a8a; font-size: 20px; font-weight: 600;">演唱会经历</div>
+        </div>
+        <div style="color: #1e40af; font-size: 12px; background: rgba(255, 255, 255, 0.3); padding: 6px 12px; border-radius: 16px; border: 1px solid rgba(59, 130, 246, 0.2);">
+          7 场记录
+        </div>
+      </div>
+      <!-- 演唱会时间轴 -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #60a5fa, #3b82f6); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「未·你好吗」2026跨年演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2025年 · 澳门</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #60a5fa, #3b82f6); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「未·LIVE 开往1982」世界巡回演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2025年 · 厦门</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #93c5fd, #60a5fa); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「未·LIVE 开往1982」巡回演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2024年 · 福州 (×2)</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #bfdbfe, #93c5fd); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「未·LIVE 开往1982」巡回演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2024年 · 南昌</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「WE·LIVE」生日演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2020年 · 长沙</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 16px; border: 1px solid rgba(59, 130, 246, 0.15);">
+          <div style="width: 12px; height: 12px; background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);"></div>
+          <div style="flex: 1;">
+            <div style="color: #1e3a8a; font-weight: 600; font-size: 16px; margin-bottom: 4px;">张杰「未·LIVE」巡回演唱会</div>
+            <div style="color: #1e40af; font-size: 14px;">2019年 · 长沙</div>
+          </div>
+          <div style="color: #2563eb; font-size: 20px;">🎤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    </div>
+  </main>
+</div>
+
+      </main>
+    </div>
+  
+  
+  <footer class="fixed bottom-0 left-0 z-30 w-full bg-white shadow-inner">
+    <div class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      <div class="py-3 border-x-0 border-t-0 border-gray-200 bg-white">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+    <div class="mt-1 text-center text-gray-500 text-sm">
+      © All Copyrights Reserved by <span class="font-serif italic font-medium">viking_h</span>
+    </div>
+
+
+  </div>
+</div>
+
+    </div>
+  </footer>
+</body>
+</html>
